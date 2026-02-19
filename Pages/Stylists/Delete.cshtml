@@ -1,0 +1,52 @@
+﻿@page
+@model Proiect_web_Frizerie.Pages.Stylists.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Stylist</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stylist.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stylist.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stylist.Prenume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stylist.Prenume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stylist.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stylist.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stylist.Telefon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stylist.Telefon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stylist.Specialty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stylist.Specialty.Nume)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Stylist.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
