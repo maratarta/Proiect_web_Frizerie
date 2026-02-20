@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Proiect_web_Frizerie.Data;
 using Microsoft.AspNetCore.Identity;
@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers(); //suportul pentru API
 builder.Services.AddDbContext<Proiect_web_FrizerieContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Proiect_web_FrizerieContext") ?? throw new InvalidOperationException("Connection string 'Proiect_web_FrizerieContext' not found.")));
 
@@ -60,5 +61,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapControllers(); // rutele pentru API
 
 app.Run();
